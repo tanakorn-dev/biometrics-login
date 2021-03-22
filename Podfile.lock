@@ -1,0 +1,31 @@
+PODS:
+  - AppCenter (4.1.1):
+    - AppCenter/Analytics (= 4.1.1)
+    - AppCenter/Crashes (= 4.1.1)
+  - AppCenter/Analytics (4.1.1):
+    - AppCenter/Core
+  - AppCenter/Core (4.1.1)
+  - AppCenter/Crashes (4.1.1):
+    - AppCenter/Core
+  - Defaults (4.2.1)
+  - SwiftIcons (3.0)
+
+DEPENDENCIES:
+  - AppCenter
+  - Defaults
+  - SwiftIcons
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AppCenter
+    - Defaults
+    - SwiftIcons
+
+SPEC CHECKSUMS:
+  AppCenter: cd53e3ed3563cc720bcb806c9731a12389b40d44
+  Defaults: 72f5ac846ca49bf8f5539f074b5ec76027610442
+  SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
+
+PODFILE CHECKSUM: fede6a79f89e80e78a106e3716d457f815941ae3
+
+COCOAPODS: 1.10.1
