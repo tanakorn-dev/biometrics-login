@@ -8,6 +8,7 @@
 import UIKit
 import SwiftIcons
 import Defaults
+import LocalAuthentication
 
 class PasscodeViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class PasscodeViewController: UIViewController {
     @IBOutlet var delButton: UIButton!
     @IBOutlet var bioButton: UIButton!
     
+    var context = LAContext()
     private var pinCode: [String] = []
     private var pinStr: String {
         var value = ""
@@ -88,6 +90,40 @@ class PasscodeViewController: UIViewController {
             }
             
             self.updatePassCodeUI()
+        }
+    }
+    
+    func biometricsAuthentication() {
+        let localAuthenticationContext = LAContext()
+        localAuthenticationContext.localizedFallbackTitle = "Please use your Passcode"
+
+        var authorizationError: NSError?
+        let reason = "Authentication required to access the secure data"
+
+        if localAuthenticationContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorizationError) {
+                
+            localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
+                    
+                if success {
+                    DispatchQueue.main.async() {
+                        let alert = UIAlertController(title: "Success", message: "Authenticated succesfully!", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                } else {
+                    // Failed to authenticate
+                    guard let error = evaluateError else {
+                        return
+                    }
+                    print(error)
+                    
+                }
+            }
+        } else {
+            guard let error = authorizationError else {
+                return
+            }
+            print(error)
         }
     }
     
