@@ -20,7 +20,7 @@ class PasscodeViewController: UIViewController {
     @IBOutlet var delButton: UIButton!
     @IBOutlet var bioButton: UIButton!
     
-    var context = LAContext()
+    private let biometricIDAuth = BiometricIDAuth()
     private var pinCode: [String] = []
     private var pinStr: String {
         var value = ""
@@ -36,10 +36,29 @@ class PasscodeViewController: UIViewController {
         super.viewDidLoad()
 
         self.titleImage.setIcon(icon: .fontAwesomeSolid(.unlockAlt), textColor: .darkGray, size: CGSize(width: 50, height: 50))
+        self.delButton.setIcon(icon: .fontAwesomeSolid(.arrowLeft), iconSize: 25, color: .white, forState: .normal)
         self.updatePassCodeUI()
         
-        self.delButton.setIcon(icon: .fontAwesomeSolid(.arrowLeft), iconSize: 25, color: .white, forState: .normal)
-        self.bioButton.setIcon(icon: .fontAwesomeSolid(.fingerprint), iconSize: 25, color: .white, forState: .normal)
+        if Defaults[.isActiveBiometric] == true {
+            self.checkBiometricType()
+        } else {
+            self.bioButton.isHidden = true
+        }
+    }
+    
+    private func checkBiometricType() {
+        self.biometricIDAuth.canEvaluate { (canEvaluate, biometricType, canEvaluateError) in
+            switch biometricType {
+            case .faceID:
+                self.bioButton.isHidden = false
+                self.bioButton.setIcon(icon: .fontAwesomeSolid(.smile), iconSize: 25, color: .white, forState: .normal)
+            case .touchID:
+                self.bioButton.isHidden = false
+                self.bioButton.setIcon(icon: .fontAwesomeSolid(.fingerprint), iconSize: 25, color: .white, forState: .normal)
+            default:
+                self.bioButton.isHidden = true
+            }
+        }
     }
     
     private func updatePassCodeUI() {
@@ -93,40 +112,6 @@ class PasscodeViewController: UIViewController {
         }
     }
     
-    func biometricsAuthentication() {
-        let localAuthenticationContext = LAContext()
-        localAuthenticationContext.localizedFallbackTitle = "Please use your Passcode"
-
-        var authorizationError: NSError?
-        let reason = "Authentication required to access the secure data"
-
-        if localAuthenticationContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorizationError) {
-                
-            localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
-                    
-                if success {
-                    DispatchQueue.main.async() {
-                        let alert = UIAlertController(title: "Success", message: "Authenticated succesfully!", preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                } else {
-                    // Failed to authenticate
-                    guard let error = evaluateError else {
-                        return
-                    }
-                    print(error)
-                    
-                }
-            }
-        } else {
-            guard let error = authorizationError else {
-                return
-            }
-            print(error)
-        }
-    }
-    
     @IBAction func button01Action(_ sender: Any) {
         self.updatePassCode(pin: "1")
     }
@@ -168,6 +153,36 @@ class PasscodeViewController: UIViewController {
     }
     
     @IBAction func buttonBioAction(_ sender: Any) {
+        self.biometricIDAuth.evaluate { [weak self] (success, error) in
+            if success {
+                Defaults[.isLogin] = true
+                self?.dismiss(animated: true, completion: nil)
+            } else {
+                switch error {
+                case .biometryNotAvailable:
+                    let alertController = UIAlertController(title: "Error", message: "Face ID Not Available. Do you want to active", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
+                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                            return
+                        }
+                        
+                        if UIApplication.shared.canOpenURL(settingsUrl) {
+                            UIApplication.shared.open(settingsUrl)
+                        }
+                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+                    alertController.addAction(okAction)
+                    alertController.addAction(cancelAction)
+                    self?.present(alertController, animated: true, completion: nil)
+                default:
+                    let alertController = UIAlertController(title: "Error", message: error?.errorDescription, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                    alertController.addAction(okAction)
+                    self?.present(alertController, animated: true, completion: nil)
+                }
+            }
+            
+        }
     }
     
     @IBAction func buttonDelAction(_ sender: Any) {

@@ -28,8 +28,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuw-zX-Jfx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POC Biometrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-lY-FCk">
-                                        <rect key="frame" x="52" y="124.5" width="216" height="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Biometrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-lY-FCk">
+                                        <rect key="frame" x="48" y="124.5" width="224.5" height="35"/>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="30"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -52,9 +52,6 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uBP-Dd-8Fy">
                                         <rect key="frame" x="135.5" y="73.5" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="changeValueAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="h2G-Yb-BLN"/>
-                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" name="mainColor"/>
@@ -95,6 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="enableLabel" destination="ltt-t0-611" id="eXo-mc-234"/>
                         <outlet property="statusSwitch" destination="uBP-Dd-8Fy" id="IIe-qx-d1u"/>
                     </connections>
                 </viewController>

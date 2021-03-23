@@ -17,6 +17,7 @@
 		0800ED5B2609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0800ED552609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf */; };
 		0800ED602609CA5400BAE4F0 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800ED5F2609CA5400BAE4F0 /* PasscodeViewController.swift */; };
 		0800ED632609EA1A00BAE4F0 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800ED622609EA1A00BAE4F0 /* Keys.swift */; };
+		B734DE35260A326F0099BE8E /* BiometricIDAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734DE34260A326F0099BE8E /* BiometricIDAuth.swift */; };
 		DDA9C888AE718336232F5A34 /* Pods_biometrics_login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA45BBA016EBCE575BD290FF /* Pods_biometrics_login.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		0800ED552609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Medium.ttf"; sourceTree = "<group>"; };
 		0800ED5F2609CA5400BAE4F0 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		0800ED622609EA1A00BAE4F0 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		B734DE34260A326F0099BE8E /* BiometricIDAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricIDAuth.swift; sourceTree = "<group>"; };
 		BA45BBA016EBCE575BD290FF /* Pods_biometrics_login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_biometrics_login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCC290E9821C15C4765DE19 /* Pods-biometrics-login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-biometrics-login.debug.xcconfig"; path = "Target Support Files/Pods-biometrics-login/Pods-biometrics-login.debug.xcconfig"; sourceTree = "<group>"; };
 		E796168C73E95B751F46B874 /* Pods-biometrics-login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-biometrics-login.release.xcconfig"; path = "Target Support Files/Pods-biometrics-login/Pods-biometrics-login.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				0800ED332608729400BAE4F0 /* ViewController.swift */,
 				0800ED5F2609CA5400BAE4F0 /* PasscodeViewController.swift */,
 				0800ED622609EA1A00BAE4F0 /* Keys.swift */,
+				B734DE34260A326F0099BE8E /* BiometricIDAuth.swift */,
 				0800ED352608729400BAE4F0 /* Main.storyboard */,
 				0800ED382608729700BAE4F0 /* Assets.xcassets */,
 				0800ED3A2608729700BAE4F0 /* LaunchScreen.storyboard */,
@@ -232,6 +235,7 @@
 				0800ED302608729400BAE4F0 /* AppDelegate.swift in Sources */,
 				0800ED322608729400BAE4F0 /* SceneDelegate.swift in Sources */,
 				0800ED632609EA1A00BAE4F0 /* Keys.swift in Sources */,
+				B734DE35260A326F0099BE8E /* BiometricIDAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +383,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = LT4X78Q64A;
 				INFOPLIST_FILE = "biometrics-login/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,6 +394,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.mflf.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Demo Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -399,7 +406,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = LT4X78Q64A;
 				INFOPLIST_FILE = "biometrics-login/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -408,6 +417,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.mflf.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Demo Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -10,4 +10,5 @@ import Defaults
 
 extension Defaults.Keys {
     static let isLogin = Key<Bool>("isLogin", default: false)
+    static let isActiveBiometric = Key<Bool>("isActiveBiometric", default: false)
 }

@@ -11,9 +11,12 @@ import Defaults
 class ViewController: UIViewController {
 
     @IBOutlet var statusSwitch: UISwitch!
+    @IBOutlet var enableLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.statusSwitch.addTarget(self, action: #selector(valueChange), for: UIControl.Event.valueChanged)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -22,6 +25,16 @@ class ViewController: UIViewController {
         if Defaults[.isLogin] == false {
             self.logOut()
         }
+        
+        if Defaults[.isActiveBiometric] == false {
+            self.statusSwitch.isOn = false
+        } else {
+            self.statusSwitch.isOn = true
+        }
+    }
+
+    @objc func valueChange(mySwitch: UISwitch) {
+        Defaults[.isActiveBiometric] = mySwitch.isOn
     }
     
     private func logOut() {
@@ -34,9 +47,6 @@ class ViewController: UIViewController {
     @IBAction func logOutAction(_ sender: Any) {
         Defaults[.isLogin] = false
         self.logOut()
-    }
-    
-    @IBAction func changeValueAction(_ sender: Any) {
     }
 }
 
