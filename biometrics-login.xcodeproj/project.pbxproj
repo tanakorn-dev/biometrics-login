@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		0800ED372608729400BAE4F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0800ED352608729400BAE4F0 /* Main.storyboard */; };
 		0800ED392608729700BAE4F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0800ED382608729700BAE4F0 /* Assets.xcassets */; };
 		0800ED3C2608729700BAE4F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0800ED3A2608729700BAE4F0 /* LaunchScreen.storyboard */; };
+		0800ED582609C4ED00BAE4F0 /* SukhumvitSet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0800ED522609C4ED00BAE4F0 /* SukhumvitSet-Bold.ttf */; };
+		0800ED5B2609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0800ED552609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf */; };
+		0800ED602609CA5400BAE4F0 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800ED5F2609CA5400BAE4F0 /* PasscodeViewController.swift */; };
+		0800ED632609EA1A00BAE4F0 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800ED622609EA1A00BAE4F0 /* Keys.swift */; };
 		DDA9C888AE718336232F5A34 /* Pods_biometrics_login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA45BBA016EBCE575BD290FF /* Pods_biometrics_login.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		0800ED382608729700BAE4F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0800ED3B2608729700BAE4F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0800ED3D2608729700BAE4F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0800ED522609C4ED00BAE4F0 /* SukhumvitSet-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Bold.ttf"; sourceTree = "<group>"; };
+		0800ED552609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Medium.ttf"; sourceTree = "<group>"; };
+		0800ED5F2609CA5400BAE4F0 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		0800ED622609EA1A00BAE4F0 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		BA45BBA016EBCE575BD290FF /* Pods_biometrics_login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_biometrics_login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCC290E9821C15C4765DE19 /* Pods-biometrics-login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-biometrics-login.debug.xcconfig"; path = "Target Support Files/Pods-biometrics-login/Pods-biometrics-login.debug.xcconfig"; sourceTree = "<group>"; };
 		E796168C73E95B751F46B874 /* Pods-biometrics-login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-biometrics-login.release.xcconfig"; path = "Target Support Files/Pods-biometrics-login/Pods-biometrics-login.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,12 +74,24 @@
 				0800ED2F2608729400BAE4F0 /* AppDelegate.swift */,
 				0800ED312608729400BAE4F0 /* SceneDelegate.swift */,
 				0800ED332608729400BAE4F0 /* ViewController.swift */,
+				0800ED5F2609CA5400BAE4F0 /* PasscodeViewController.swift */,
+				0800ED622609EA1A00BAE4F0 /* Keys.swift */,
 				0800ED352608729400BAE4F0 /* Main.storyboard */,
 				0800ED382608729700BAE4F0 /* Assets.xcassets */,
 				0800ED3A2608729700BAE4F0 /* LaunchScreen.storyboard */,
+				0800ED502609C4ED00BAE4F0 /* sukhumvit-set */,
 				0800ED3D2608729700BAE4F0 /* Info.plist */,
 			);
 			path = "biometrics-login";
+			sourceTree = "<group>";
+		};
+		0800ED502609C4ED00BAE4F0 /* sukhumvit-set */ = {
+			isa = PBXGroup;
+			children = (
+				0800ED522609C4ED00BAE4F0 /* SukhumvitSet-Bold.ttf */,
+				0800ED552609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf */,
+			);
+			path = "sukhumvit-set";
 			sourceTree = "<group>";
 		};
 		EA6C719667AE89114A796AEE /* Pods */ = {
@@ -80,7 +100,6 @@
 				DCCC290E9821C15C4765DE19 /* Pods-biometrics-login.debug.xcconfig */,
 				E796168C73E95B751F46B874 /* Pods-biometrics-login.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,6 +173,8 @@
 				0800ED3C2608729700BAE4F0 /* LaunchScreen.storyboard in Resources */,
 				0800ED392608729700BAE4F0 /* Assets.xcassets in Resources */,
 				0800ED372608729400BAE4F0 /* Main.storyboard in Resources */,
+				0800ED5B2609C4ED00BAE4F0 /* SukhumvitSet-Medium.ttf in Resources */,
+				0800ED582609C4ED00BAE4F0 /* SukhumvitSet-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0800ED602609CA5400BAE4F0 /* PasscodeViewController.swift in Sources */,
 				0800ED342608729400BAE4F0 /* ViewController.swift in Sources */,
 				0800ED302608729400BAE4F0 /* AppDelegate.swift in Sources */,
 				0800ED322608729400BAE4F0 /* SceneDelegate.swift in Sources */,
+				0800ED632609EA1A00BAE4F0 /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

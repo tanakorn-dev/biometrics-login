@@ -1,24 +1,423 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet-Bold.ttf">
+            <string>SukhumvitSet-Bold</string>
+        </array>
+        <array key="SukhumvitSet-Medium.ttf">
+            <string>SukhumvitSet-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="biometrics_login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuw-zX-Jfx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POC Biometrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-lY-FCk">
+                                        <rect key="frame" x="52" y="124.5" width="216" height="35"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="30"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XhA-lY-FCk" firstAttribute="centerX" secondItem="vuw-zX-Jfx" secondAttribute="centerX" id="1w2-3B-aR3"/>
+                                    <constraint firstItem="XhA-lY-FCk" firstAttribute="centerY" secondItem="vuw-zX-Jfx" secondAttribute="centerY" id="MMe-lr-Q4k"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIs-cB-kyE">
+                                <rect key="frame" x="0.0" y="284" width="320" height="284"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Biometrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltt-t0-611">
+                                        <rect key="frame" x="79" y="30" width="162.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uBP-Dd-8Fy">
+                                        <rect key="frame" x="135.5" y="73.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeValueAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="h2G-Yb-BLN"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" name="mainColor"/>
+                                <constraints>
+                                    <constraint firstItem="ltt-t0-611" firstAttribute="top" secondItem="zIs-cB-kyE" secondAttribute="top" constant="30" id="CYS-BN-Ns4"/>
+                                    <constraint firstItem="ltt-t0-611" firstAttribute="centerX" secondItem="zIs-cB-kyE" secondAttribute="centerX" id="bfi-0n-67f"/>
+                                    <constraint firstItem="uBP-Dd-8Fy" firstAttribute="centerX" secondItem="zIs-cB-kyE" secondAttribute="centerX" id="qNy-mb-ct3"/>
+                                    <constraint firstItem="uBP-Dd-8Fy" firstAttribute="top" secondItem="ltt-t0-611" secondAttribute="bottom" constant="20" id="yZx-uO-9f2"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzh-sR-rZ6">
+                                <rect key="frame" x="128.5" y="478" width="63" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ora-uY-eoV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oEG-dq-LMZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zIs-cB-kyE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="30Z-ST-eog"/>
+                            <constraint firstItem="zIs-cB-kyE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3cG-2L-a2j"/>
+                            <constraint firstAttribute="trailing" secondItem="vuw-zX-Jfx" secondAttribute="trailing" id="Bzi-ae-gd5"/>
+                            <constraint firstItem="yzh-sR-rZ6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D8Z-Tu-IIK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yzh-sR-rZ6" secondAttribute="bottom" constant="40" id="IpY-7f-Mts"/>
+                            <constraint firstItem="vuw-zX-Jfx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="T10-9w-qBD"/>
+                            <constraint firstAttribute="bottom" secondItem="zIs-cB-kyE" secondAttribute="bottom" id="dSO-il-P8U"/>
+                            <constraint firstItem="vuw-zX-Jfx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fgO-Bb-TNw"/>
+                            <constraint firstAttribute="trailing" secondItem="zIs-cB-kyE" secondAttribute="trailing" id="nPW-m7-qZs"/>
+                            <constraint firstItem="zIs-cB-kyE" firstAttribute="top" secondItem="vuw-zX-Jfx" secondAttribute="bottom" id="rjH-U2-7dH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="statusSwitch" destination="uBP-Dd-8Fy" id="IIe-qx-d1u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.75" y="80.281690140845072"/>
+        </scene>
+        <!--Passcode View Controller-->
+        <scene sceneID="QmX-DA-M2a">
+            <objects>
+                <viewController storyboardIdentifier="PasscodeViewController" id="r0T-Zw-CQd" customClass="PasscodeViewController" customModule="biometrics_login" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Crc-hi-3Sx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNJ-W8-P8J">
+                                <rect key="frame" x="0.0" y="232" width="320" height="336"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8D9-8c-Xum">
+                                        <rect key="frame" x="45" y="25" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZSl-Ul-0dI"/>
+                                            <constraint firstAttribute="width" constant="50" id="sMg-tH-Tfj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button01Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="Caq-Ge-r2D"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzy-0h-aDm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugy-ZR-bmi">
+                                        <rect key="frame" x="135" y="25" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="FYf-9k-I0m"/>
+                                            <constraint firstAttribute="height" constant="50" id="x2z-1h-Wt3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button02Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="Z9e-Mg-goV"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PAt-ly-ROe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-kI-NuL">
+                                        <rect key="frame" x="225" y="25" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="GSs-sJ-mua"/>
+                                            <constraint firstAttribute="height" constant="50" id="wzR-fv-H7k"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button03Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="vhd-Um-UfR"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Be1-ZO-ACe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O56-vR-x76">
+                                        <rect key="frame" x="45" y="100" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="51R-KV-aVu"/>
+                                            <constraint firstAttribute="width" constant="50" id="HfM-lp-2WG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button04Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="5bP-Cx-GoA"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q46-9s-rKr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqD-J8-S9Y">
+                                        <rect key="frame" x="135" y="100" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="LzH-EL-RyU"/>
+                                            <constraint firstAttribute="height" constant="50" id="fG0-Vv-hWy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button05Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="XFO-Et-cJd"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XSS-9j-VE5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGd-rq-WPN">
+                                        <rect key="frame" x="225" y="100" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="4I9-QH-uBD"/>
+                                            <constraint firstAttribute="height" constant="50" id="dLZ-PI-pwa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button06Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="45W-gg-1Er"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MaA-QN-ij2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74J-MF-dxu">
+                                        <rect key="frame" x="45" y="175" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Fm8-RC-nrS"/>
+                                            <constraint firstAttribute="height" constant="50" id="Vdf-gQ-Wu4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button07Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="4vn-uh-YLa"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hun-qh-noy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ur-LN-lQh">
+                                        <rect key="frame" x="135" y="175" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="99j-Sq-G6W"/>
+                                            <constraint firstAttribute="height" constant="50" id="fDl-RN-5gH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button08Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="nXC-Ky-72Q"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SCo-H7-XiV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zl-eo-mXL">
+                                        <rect key="frame" x="225" y="175" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AXY-se-uYw"/>
+                                            <constraint firstAttribute="width" constant="50" id="YIk-Lx-WYv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button09Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="5hi-7v-Fhj"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pI3-dZ-ym2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-X1-Pgv">
+                                        <rect key="frame" x="45" y="250" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="71W-jL-xJ1"/>
+                                            <constraint firstAttribute="height" constant="50" id="7Jf-Oc-T8l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonBioAction:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="Ala-6l-hnd"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWW-pg-z3X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1a-Lw-6QV">
+                                        <rect key="frame" x="135" y="250" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="bbp-0q-8tN"/>
+                                            <constraint firstAttribute="height" constant="50" id="k4m-LR-PVj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button00Action:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="v20-it-4eu"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ivh-7o-rwh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmw-ef-HFq">
+                                        <rect key="frame" x="225" y="250" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ATc-Dq-Qmf"/>
+                                            <constraint firstAttribute="width" constant="50" id="oFj-wM-yEC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="35"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonDelAction:" destination="r0T-Zw-CQd" eventType="touchUpInside" id="s2v-8P-n2a"/>
+                                            <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RK1-Hz-ejw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="mainColor"/>
+                                <constraints>
+                                    <constraint firstItem="u1a-Lw-6QV" firstAttribute="centerX" secondItem="cNJ-W8-P8J" secondAttribute="centerX" id="0UH-e4-Cbc"/>
+                                    <constraint firstItem="ugy-ZR-bmi" firstAttribute="centerX" secondItem="cNJ-W8-P8J" secondAttribute="centerX" id="4Ap-Sy-ym3"/>
+                                    <constraint firstItem="8ur-LN-lQh" firstAttribute="centerX" secondItem="cNJ-W8-P8J" secondAttribute="centerX" id="53p-m7-tr9"/>
+                                    <constraint firstItem="5mn-X1-Pgv" firstAttribute="leading" secondItem="cNJ-W8-P8J" secondAttribute="leading" constant="45" id="5n2-Ph-n6d"/>
+                                    <constraint firstItem="1Zl-eo-mXL" firstAttribute="top" secondItem="dGd-rq-WPN" secondAttribute="bottom" constant="25" id="CEh-Wc-jeB"/>
+                                    <constraint firstItem="dGd-rq-WPN" firstAttribute="top" secondItem="jM2-kI-NuL" secondAttribute="bottom" constant="25" id="CkV-z2-aA2"/>
+                                    <constraint firstItem="5mn-X1-Pgv" firstAttribute="top" secondItem="74J-MF-dxu" secondAttribute="bottom" constant="25" id="LNY-FE-eKv"/>
+                                    <constraint firstAttribute="trailing" secondItem="dGd-rq-WPN" secondAttribute="trailing" constant="45" id="LoE-hq-tku"/>
+                                    <constraint firstItem="8D9-8c-Xum" firstAttribute="top" secondItem="cNJ-W8-P8J" secondAttribute="top" constant="25" id="Lto-ed-oSr"/>
+                                    <constraint firstItem="vqD-J8-S9Y" firstAttribute="top" secondItem="ugy-ZR-bmi" secondAttribute="bottom" constant="25" id="MNY-37-dw4"/>
+                                    <constraint firstItem="O56-vR-x76" firstAttribute="top" secondItem="8D9-8c-Xum" secondAttribute="bottom" constant="25" id="N5N-gW-BVu"/>
+                                    <constraint firstItem="xmw-ef-HFq" firstAttribute="top" secondItem="1Zl-eo-mXL" secondAttribute="bottom" constant="25" id="PPN-wr-hpg"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Zl-eo-mXL" secondAttribute="trailing" constant="45" id="SnU-ak-dtc"/>
+                                    <constraint firstItem="O56-vR-x76" firstAttribute="leading" secondItem="cNJ-W8-P8J" secondAttribute="leading" constant="45" id="TzC-Iy-OH5"/>
+                                    <constraint firstItem="8D9-8c-Xum" firstAttribute="leading" secondItem="cNJ-W8-P8J" secondAttribute="leading" constant="45" id="gPY-2D-XnA"/>
+                                    <constraint firstAttribute="trailing" secondItem="xmw-ef-HFq" secondAttribute="trailing" constant="45" id="gY2-eH-6gg"/>
+                                    <constraint firstItem="8ur-LN-lQh" firstAttribute="top" secondItem="vqD-J8-S9Y" secondAttribute="bottom" constant="25" id="pkC-FQ-phB"/>
+                                    <constraint firstItem="vqD-J8-S9Y" firstAttribute="centerX" secondItem="cNJ-W8-P8J" secondAttribute="centerX" id="pwy-Hs-fTR"/>
+                                    <constraint firstItem="ugy-ZR-bmi" firstAttribute="top" secondItem="cNJ-W8-P8J" secondAttribute="top" constant="25" id="rcj-ET-Hts"/>
+                                    <constraint firstItem="u1a-Lw-6QV" firstAttribute="top" secondItem="8ur-LN-lQh" secondAttribute="bottom" constant="25" id="u96-pL-tAA"/>
+                                    <constraint firstItem="74J-MF-dxu" firstAttribute="top" secondItem="O56-vR-x76" secondAttribute="bottom" constant="25" id="val-mZ-Kyz"/>
+                                    <constraint firstAttribute="height" constant="336" id="whp-s0-2Wf"/>
+                                    <constraint firstItem="jM2-kI-NuL" firstAttribute="top" secondItem="cNJ-W8-P8J" secondAttribute="top" constant="25" id="wu9-dZ-wEu"/>
+                                    <constraint firstItem="74J-MF-dxu" firstAttribute="leading" secondItem="cNJ-W8-P8J" secondAttribute="leading" constant="45" id="ya7-Pj-aMp"/>
+                                    <constraint firstAttribute="trailing" secondItem="jM2-kI-NuL" secondAttribute="trailing" constant="45" id="zOB-lW-87m"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sil-xO-qu4">
+                                <rect key="frame" x="135" y="30" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="tqs-uT-cl1"/>
+                                    <constraint firstAttribute="height" constant="50" id="z7o-vi-Qeq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuI-ad-iZa">
+                                <rect key="frame" x="67.5" y="100" width="185" height="23.5"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrM-tK-dDh">
+                                <rect key="frame" x="78.5" y="143.5" width="163" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FZI-9N-WuN">
+                                        <rect key="frame" x="15" y="15" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="F3p-ng-1cs"/>
+                                            <constraint firstAttribute="height" constant="22" id="cVM-ZK-BBX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1JP-dC-LQ5">
+                                        <rect key="frame" x="52" y="15" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="MGr-YM-eZV"/>
+                                            <constraint firstAttribute="height" constant="22" id="iTB-E4-bec"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjb-gM-u0L">
+                                        <rect key="frame" x="89" y="15" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="gIw-I2-bPz"/>
+                                            <constraint firstAttribute="width" constant="22" id="hrJ-hg-2Sj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRa-9L-vFf">
+                                        <rect key="frame" x="126" y="15" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="O95-VQ-0rS"/>
+                                            <constraint firstAttribute="height" constant="22" id="ZOl-US-fgH"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="1JP-dC-LQ5" firstAttribute="leading" secondItem="FZI-9N-WuN" secondAttribute="trailing" constant="15" id="3Ux-FZ-SFv"/>
+                                    <constraint firstItem="cRa-9L-vFf" firstAttribute="top" secondItem="LrM-tK-dDh" secondAttribute="top" constant="15" id="Eqc-gN-y6f"/>
+                                    <constraint firstAttribute="height" constant="50" id="G9n-oh-0jx"/>
+                                    <constraint firstItem="FZI-9N-WuN" firstAttribute="top" secondItem="LrM-tK-dDh" secondAttribute="top" constant="15" id="TTC-kw-0A3"/>
+                                    <constraint firstItem="fjb-gM-u0L" firstAttribute="top" secondItem="LrM-tK-dDh" secondAttribute="top" constant="15" id="YE0-VI-tpc"/>
+                                    <constraint firstItem="fjb-gM-u0L" firstAttribute="leading" secondItem="1JP-dC-LQ5" secondAttribute="trailing" constant="15" id="ZvZ-gK-UrY"/>
+                                    <constraint firstAttribute="width" constant="163" id="iCP-E7-LTY"/>
+                                    <constraint firstItem="FZI-9N-WuN" firstAttribute="leading" secondItem="LrM-tK-dDh" secondAttribute="leading" constant="15" id="n9l-eW-jkr"/>
+                                    <constraint firstItem="1JP-dC-LQ5" firstAttribute="top" secondItem="LrM-tK-dDh" secondAttribute="top" constant="15" id="ogz-my-Ai5"/>
+                                    <constraint firstItem="cRa-9L-vFf" firstAttribute="leading" secondItem="fjb-gM-u0L" secondAttribute="trailing" constant="15" id="wNQ-TU-W1D"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LGL-Jw-VIQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cNJ-W8-P8J" secondAttribute="trailing" id="AH0-Vx-xZf"/>
+                            <constraint firstAttribute="bottom" secondItem="cNJ-W8-P8J" secondAttribute="bottom" id="E6a-Xf-46r"/>
+                            <constraint firstItem="Sil-xO-qu4" firstAttribute="top" secondItem="LGL-Jw-VIQ" secondAttribute="top" constant="30" id="IZP-nW-vzf"/>
+                            <constraint firstItem="LrM-tK-dDh" firstAttribute="centerX" secondItem="Crc-hi-3Sx" secondAttribute="centerX" id="ZUL-MG-VVe"/>
+                            <constraint firstItem="QuI-ad-iZa" firstAttribute="centerX" secondItem="Crc-hi-3Sx" secondAttribute="centerX" id="cJI-xA-xW8"/>
+                            <constraint firstItem="LrM-tK-dDh" firstAttribute="top" secondItem="QuI-ad-iZa" secondAttribute="bottom" constant="20" id="dz8-v2-FDg"/>
+                            <constraint firstItem="Sil-xO-qu4" firstAttribute="centerX" secondItem="Crc-hi-3Sx" secondAttribute="centerX" id="spJ-QY-8xI"/>
+                            <constraint firstItem="cNJ-W8-P8J" firstAttribute="leading" secondItem="Crc-hi-3Sx" secondAttribute="leading" id="txR-nN-Ruw"/>
+                            <constraint firstItem="QuI-ad-iZa" firstAttribute="top" secondItem="Sil-xO-qu4" secondAttribute="bottom" constant="20" id="vXW-UJ-PBd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bioButton" destination="5mn-X1-Pgv" id="re3-Ms-1DR"/>
+                        <outlet property="delButton" destination="xmw-ef-HFq" id="Hh3-0o-i6h"/>
+                        <outlet property="passcode01Image" destination="FZI-9N-WuN" id="txx-Cq-uhs"/>
+                        <outlet property="passcode02Image" destination="1JP-dC-LQ5" id="VsH-Tg-oat"/>
+                        <outlet property="passcode03Image" destination="fjb-gM-u0L" id="2n8-6O-K7W"/>
+                        <outlet property="passcode04Image" destination="cRa-9L-vFf" id="yZI-60-LaR"/>
+                        <outlet property="titleImage" destination="Sil-xO-qu4" id="ofr-aN-Aad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mu-Ix-Hif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766.875" y="79.225352112676063"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="mainColor">
+            <color red="0.85098039215686272" green="0.32156862745098042" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
